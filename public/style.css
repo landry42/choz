@@ -1,0 +1,70 @@
+*{
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Varela Round', sans-serif;
+}
+
+#terminal{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height:100%;
+}
+
+#terminal-out{
+    resize: none;
+    background: none;
+    border: none;
+    margin: 1vh;
+    color: white;
+}
+
+#terminal-in{
+    background-color: #404040;
+    border: none;
+    padding: 1vh;
+    color: white;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  align-items: center;
+}
+
+.jsPanel-content button {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgb(92, 182, 92);
+  padding: 15px 40px;
+  border-radius: 4px;
+  font-weight: normal;
+  transition: all 0.2s ease-in-out;
+  border:none;
+  margin: 15px;
+}
+  
+.jsPanel-content button:hover {
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgba(92, 182, 104, 0.4);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #101010;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f1f1f1;
+}
