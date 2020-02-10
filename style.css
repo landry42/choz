@@ -1,13 +1,22 @@
 #terminal{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    background-color: #202020;
 }
 
-#terminal textarea{
+#terminal-out{
     resize: none;
-    flex-basis: 100%;
+    background: none;
+    border: none;
+    margin: 1vh;
+    color: white;
 }
 
-#terminal input{
-    flex-basis: 100%;
+#terminal-in{
+    background-color: #404040;
+    border: none;
+    padding: 1vh;
+    color: white;
 }
