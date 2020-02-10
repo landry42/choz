@@ -1,0 +1,13 @@
+#terminal{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#terminal textarea{
+    resize: none;
+    flex-basis: 100%;
+}
+
+#terminal input{
+    flex-basis: 100%;
+}
