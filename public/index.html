@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ForkOS</title>
 
-    <script src="main.js"></script>
-
     <!-- loading jsPanel css -->
     <link href="lib/jspanel/dist/jspanel.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -30,10 +28,37 @@
 
 </head>
 <body style="background-color: #303030;">
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
 
-    <script>
-        forkos.boot();
-    </script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-database.js"></script>
 
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyA18MJ1CB6fnfTh5pqOyXlA2iVzA4X8zj4",
+      authDomain: "forkos.firebaseapp.com",
+      databaseURL: "https://forkos.firebaseio.com",
+      projectId: "forkos",
+      storageBucket: "forkos.appspot.com",
+      messagingSenderId: "455317542562",
+      appId: "1:455317542562:web:b52de40e9b7a150a7629fb",
+      measurementId: "G-WCZB22Q6C7"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    let db = firebase.database();
+  </script>
+  <script src="main.js"></script>
+  <script>
+    forkos.boot();
+  </script>
+
+  <div id="object"></div>
 </body>
 </html>
