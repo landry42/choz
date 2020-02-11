@@ -10,11 +10,16 @@
     height:100%;
 }
 
+textarea:focus {
+  outline: none;
+}
+
 #terminal-out{
     resize: none;
     background: none;
     border: none;
     margin: 1vh;
+    margin-bottom: -1.5vh;
     color: white;
 }
 

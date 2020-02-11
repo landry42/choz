@@ -13,6 +13,9 @@ forkos = {
     }
   },
   bin:{
+    run:function(){
+      write("Commande non reconnue, tapez 'help' pour plus d'infos","error");
+    },
     help:{
       run:function(){
         write("Voici les commandes disponibles");
@@ -36,11 +39,22 @@ forkos = {
       },
       enter: function(command){
         write("");
-        if (command[0] in forkos.bin){
-          forkos.bin[command.shift()].run(command);
-        } else {
-          this.write("Commande non reconnue, tapez 'help' pour plus d'infos","error");
+        path = forkos.bin;
+        function searchPath(command){
+          console.log(command);
+          elem = command.shift();
+          if("run" in path){
+            checkPath = path;
+            checkCommand = command;
+          }
+          if(elem in path){
+            path = path[elem];
+            searchPath(command);
+          } else {
+            checkPath.run(checkCommand);
+          }
         }
+        searchPath(command);
         document.getElementById("terminal-in").value = "";
       },
       resize: function () {
