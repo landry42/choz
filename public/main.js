@@ -22,11 +22,8 @@ forkos = {
       }
     },
     echo:{
-      run:function(){
-        write("argument manquant");
-      },
       run:function(text){
-        write(text)
+        write(text.join(" "))
       }
     },
     terminal:{
@@ -40,7 +37,7 @@ forkos = {
       enter: function(command){
         write("");
         if (command[0] in forkos.bin){
-          forkos.bin[command[0]].run(command);
+          forkos.bin[command.shift()].run(command);
         } else {
           this.write("Commande non reconnue, tapez 'help' pour plus d'infos","error");
         }
@@ -59,18 +56,38 @@ forkos = {
     },
     panel:{
       run: function(panel){
-        panel = this[panel]
-        panel.theme = forkos.theme.default;
-        panel.iconfont = 'material-icons';
-        panel.borderRadius = 5;
-        jsPanel.create(panel);
+        if (typeof panel == "object"){
+          panel = panel[0];
+        }
+        if (panel in this){
+          panel = this[panel];
+          panel.theme = forkos.theme.default;
+          panel.iconfont = 'material-icons';
+          panel.borderRadius = 5;
+          jsPanel.create(panel);
+        } else {
+          write("voici les panels utilisables:");
+          for(elem in this){
+            if (elem != "run"){
+              write(" - "+elem);
+            }
+          }
+        }
+
       },
       terminal:{
         headerTitle: 'TERMINAL',
         content:
-        '<dic id="terminal">'+
+        '<div id="terminal">'+
         '<textarea name="" id="terminal-out"  readonly></textarea>'+
         '<input id="terminal-in" type="text" onchange="forkos.bin.terminal.keyWord(this.value)">'+
+        '</div>',
+      },
+      button:{
+        headerTitle: 'BOUTON',
+        content:
+        '<dic class="center">'+
+        '<input type="button" value="Voici un bouton" onclick="alert(\'Cliquable\')">'+
         '</div>',
       },
     }
