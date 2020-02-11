@@ -32,10 +32,8 @@
   align-items: center;
 }
 
-.jsPanel-content button {
+.jsPanel-content input {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.8);
-  background: rgb(92, 182, 92);
   padding: 15px 40px;
   border-radius: 4px;
   font-weight: normal;
@@ -43,8 +41,18 @@
   border:none;
   margin: 15px;
 }
+
+.jsPanel-content input[type=button] {
+  color: white;
+  background: rgb(92, 182, 92);
+}
+
+.jsPanel-content input[type=text] {
+  color: #404040;
+  background:rgba(255, 255, 255, 0.8);
+}
   
-.jsPanel-content button:hover {
+.jsPanel-content input[type=button]:hover {
   color: rgba(255, 255, 255, 1);
   box-shadow: 0 5px 15px rgba(92, 182, 104, 0.4);
 }
